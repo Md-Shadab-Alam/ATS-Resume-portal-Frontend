@@ -1,60 +1,43 @@
 <app-nav-bar></app-nav-bar>
 
-<div *ngIf="resumes" class="resume1">
-    <div class="search">
-        <app-search (search)="onSearch($event)"></app-search>
-    </div>
-    <div class="Selected">Searched Resume</div>
-    <div>
-        <table class="table">
-            <!-- [disabled]="selectedResumes.length === 0 || isDownloading" -->
+<div class="container">
+    <div *ngIf="resumes" class="resume1">
+        <div class="search">
+            <app-search (search)="onSearch($event)"></app-search>
+        </div>
+
+        <div *ngIf="!flag">
             <button (click)="downloadSelectedResumes()">Download Selected Resume</button>
-            <tr *ngFor="let resume of resumes1" class="tr">
-                <td>
-                    <!-- (change)="toggleSelection(resume)" -->
-                    <input type="checkbox" [(ngModel)]="resume.selected">
-                    <!-- <a routerLink="resume.pdfUrl" target="_blank">View</a> -->
-                </td>
-                <td>{{resume.id}}</td>
-                <td>{{ resume.fileName }}</td>
-                <td class="link_img"><a href="{{resume.pdfUrl}}">Download<img src="https://i.ibb.co/Fh19BFq/logo1.png"
-                            alt="logo1" /></a> </td>
-            </tr>
-        </table>
-    </div>
-    <div *ngIf="isDownloading">
+            <div class="Selected">Searched Resume</div>
+        </div>
+        <div class="row">
+            <div *ngFor="let resume of resumes1" class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <input type="checkbox" [(ngModel)]="resume.selected">
+                        <h5 class="card-title">{{ resume.fileName }}</h5>
+                        <p class="card-text">Resume Id: {{ resume.id }}</p>
+                        <img src="https://i.ibb.co/Fh19BFq/logo1.png" alt="logo1" />
+                        <a href="{{ resume.pdfUrl }}" class="btn btn-primary">Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div *ngIf="isDownloading">
         <p>Downloading...</p>
+    </div> -->
 
     </div>
 
+    <div *ngIf="resumes && flag" class="resume">
+        <div>Resume List</div>
+        <div class="row">
 
-</div>
-<!-- ======================================== -->
 
-<!-- <div class="line"></div> -->
-<!-- 
-    ========================================  -->
-<div *ngIf="resumes" class="resume">
-    <div>Resume List</div>
-
-    <!-- <table class="table">
-            <tr>
-              <th>Serial No</th>
-              <th>File Name</th>
-              <th>Download</th>
-            </tr>
-            <tr *ngFor="let resume of resumes" class="tr">
-              <td>{{resume.id}}</td>
-              <td>{{ resume.fileName }}</td>
-              <td class="link_img"><button onclick="">Download<img src="https://i.ibb.co/Fh19BFq/logo1.png"
-                    alt="logo1" /></button> </td>
-            </tr>
-          </table> -->
-
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <div *ngFor="let resume of resumes" class="card">
+            <div *ngFor="let resume of resumes" class="col-md-4">
+                <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">{{ resume.fileName }}</h5>
                         <p class="card-text">Resume Id: {{ resume.id }}</p>
@@ -63,7 +46,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
-
 </div>

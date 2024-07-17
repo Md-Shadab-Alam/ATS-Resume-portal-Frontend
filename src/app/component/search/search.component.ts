@@ -22,7 +22,7 @@ export class SearchComponent {
   //   });
  
   onSearch(): void{
-    this.search.emit(this.query)
+    this.search.emit(this.query),
     console.log("Search")
   }
 }

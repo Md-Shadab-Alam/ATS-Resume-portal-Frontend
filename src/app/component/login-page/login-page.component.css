@@ -1,0 +1,11 @@
+.form-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    margin-left: 35%;
+  }
+  
+  form {
+    width: 60%;
+    margin: 0 auto;
+  }

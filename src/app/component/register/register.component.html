@@ -1,6 +1,5 @@
 <div class="outer">
-
-    <div class="card m-3 col-sm-6 col-lg-4 col-md-6">
+    <div class="card col-sm-6 col-lg-4 col-md-6 form-container">
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
             <h3>REGISTER</h3>
@@ -91,26 +90,14 @@
 
 
             <div class=" buttons">
-                <button id="user-btn" [disabled]="registerForm.invalid" class="btn btn-secondary btn-lg"
-                    type="submit">Sign In
+                <button id="user-btn" [disabled]="registerForm.invalid" class="btn btn-secondary m-3" type="submit">Sign
+                    In
                 </button>
-                <!-- <button [disabled]="registerForm.invalid" class="btn btn-secondary btn-lg" type="submit">Register</button> -->
-                <!-- <button class="btn btn-outline-secondary btn-lg" type="button"><a routerLink="../ae">Sign In As
-                        Account
-                        Executive</a></button> -->
 
             </div>
-            <div class="text-center pt-2 login text-muted">
+            <div class="text-center pt-2 login text-muted ">
                 <p>Already have an account? </p><a id="forget" routerLink="">Login</a>
             </div>
-            <div class="text-center login">
-                <p><a id="forget" href=""><i class="bi bi-house-door-fill"></i>&nbsp;Home</a></p>
-            </div>
-
-            <!-- <div class="social">
-                <div class="go"><i class="bi bi-google"></span></div>
-                <div class="fb"><i class="bi bi-facebook"></span></div>
-            </div> -->
 
         </form>
     </div>

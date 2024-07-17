@@ -14,7 +14,7 @@ export class DashboardComponent {
 
 resumes?: any[];
   resumes1: any[] =[];
- 
+  flag: boolean = true;
   selectedResumes: any[] =[];
   isDownloading: boolean =false;
  
@@ -42,6 +42,7 @@ resumes?: any[];
     this.resumeService.searchResumes(query).subscribe(
       data => {
         this.resumes1 = data;
+        this.flag = false;
         console.log('Search results:', data);
       },
       error => {
