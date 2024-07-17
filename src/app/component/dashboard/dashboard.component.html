@@ -7,8 +7,8 @@
         </div>
 
         <div *ngIf="!flag">
-            <button (click)="downloadSelectedResumes()">Download Selected Resume</button>
-            <div class="Selected">Searched Resume</div>
+            <button class="btn btn-primary btn-position" (click)="downloadSelectedResumes()">Download Multiple Resume</button>
+            <h3 class="Selected text-center">Matched Resume</h3>
         </div>
         <div class="row">
             <div *ngFor="let resume of resumes1" class="col-md-4">
@@ -32,7 +32,7 @@
     </div>
 
     <div *ngIf="resumes && flag" class="resume">
-        <div>Resume List</div>
+        <h3 class="Selected text-center">Matched List</h3>
         <div class="row">
 
 
