@@ -20,13 +20,27 @@
 .footer{
   background-color:antiquewhite
 }
+.card{
+  height: 25vh;
+  width: 62vh;
+}
 img{
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
 }
 .btn-position{
-  margin-left: 85%;
+  margin-left: 90%;;
 }
+.Download-btn{
+ margin-left: 35%;
+}
+.resumeId{
+  margin: 3%;
+}
+.card-top{
+  margin-bottom: 5%;
+}
+/* 
 .resumeList{
   text-align: center;
   background-color:  #aa04a2;
@@ -50,4 +64,4 @@ img{
 .link_img a:active{
   text-decoration: dashed;
   background-color: rgb(65, 8, 210);
-}
+} */

@@ -55,9 +55,8 @@ export class RegisterComponent {
       this.authService.registerUser(this.registerDetails).subscribe((res: any) => {
         // console.log(res);
         if (res.IsSuccess == false)
-          alert(res.Message);
+          alert(res.Message("Registration Failed"));
         else {
-          alert(res.Message);
           this.router.navigateByUrl("");
         }
       })
