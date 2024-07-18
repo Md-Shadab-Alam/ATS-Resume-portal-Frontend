@@ -12,7 +12,8 @@ export class ResumeDataService {
 
   constructor(private http: HttpClient) { } 
  
-  BaseApiUrl: string = 'https://localhost:7101/api'
+  // BaseApiUrl: string = 'https://localhost:7101/api'
+  BaseApiUrl: string = 'https://resumeportal.azurewebsites.net/api/'
 
   getAllResumes(): Observable<any[]> {
     return this.http.get<any[]>(`${this.BaseApiUrl}/Resumes`);
