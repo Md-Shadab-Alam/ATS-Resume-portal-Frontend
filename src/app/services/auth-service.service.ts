@@ -13,7 +13,10 @@ import { Login } from '../models/login';
 export class AuthService {
 
   currentUser: BehaviorSubject<any>=new BehaviorSubject(null); //to decrypt jwt token
-  baseApiUrl:string="https://localhost:7101";
+  // baseApiUrl:string="https://localhost:7101";
+  baseApiUrl:string="https://resumeportal.azurewebsites.net";
+  
+
   
   jwtHelperService=new JwtHelperService();
  
