@@ -12,7 +12,7 @@
         </div>
         <div class="row">
             <div *ngFor="let resume of resumes1" class="col-md-4">
-                <div class="card">
+                <div class="card m-2">
                     <div class="card-body">
                         <input type="checkbox" [(ngModel)]="resume.selected">
                         <h5 class="card-title">{{ resume.fileName }}</h5>
@@ -37,7 +37,7 @@
 
 
             <div *ngFor="let resume of resumes" class="col-md-4">
-                <div class="card">
+                <div class="card m-2">
                     <div class="card-body">
                         <h5 class="card-title">{{ resume.fileName }}</h5>
                         <p class="card-text">Resume Id: {{ resume.id }}</p>
@@ -50,3 +50,8 @@
         </div>
     </div>
 </div>
+<footer>
+    <div class="py-4 ">
+
+    </div>
+</footer>
