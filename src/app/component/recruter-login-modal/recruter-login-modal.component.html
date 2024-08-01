@@ -1,0 +1,56 @@
+<div class="modal fade" id="recruterslogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="recrutersloginLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="">Login Here</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <div class="modal-body">
+                    <div class="m-4">
+                        <!-- <label for="username"> Username </label> -->
+                        <input class="form-control" formControlName="username" placeholder="Username" type="text" name="username" id="username" autocomplete="on"
+                            [(ngModel)]="loginDetails.Email">
+                    </div>
+                    <small *ngIf="Username.errors?.['required'] && (Username.touched || Username.dirty)"
+                        class="text-danger">*Username is required</small>
+                    <small *ngIf="Username.errors?.['minlength'] && (Username.touched || Username.dirty)"
+                        class="text-danger">*Username is too short</small>
+                    <small *ngIf="Username.errors?.['email'] && (Username.touched || Username.dirty)"
+                        class="text-danger">*Username is invalid</small>
+
+                    <div class="m-4">
+                        <!-- <label for="password"> Password</label> -->
+                        <input class="form-control" formControlName="password" placeholder="Password" type="password" id="password" autocomplete="off"
+                            [(ngModel)]="loginDetails.Password">
+
+                    </div>
+                    <small *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)"
+                        class="text-danger">*Password is required</small>
+                    <small
+                        *ngIf="Password.errors?.['minlength'] || Password.errors?.['maxlength'] && (Password.touched || Password.dirty)"
+                        class="text-danger">*Password should be at least 6 and at the max 15 characters long.</small>
+
+
+                    <div class="m-2">
+                        <button [disabled]="loginForm.invalid" class="btn btn-secondary btn-lg" type="submit">Login
+                        </button>
+                    </div>
+
+                    <div class="modal-body text-center pt-3 signup">
+                        <p><span>Don't have account?
+                                <a id="forget" routerLink="register">Signup</a>
+                            </span>
+                            <br>
+                            <!-- <span>
+                        <a id="forget" href=""><i class="bi bi-house-door-fill"></i>&nbsp;Home</a>
+                    </span> -->
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

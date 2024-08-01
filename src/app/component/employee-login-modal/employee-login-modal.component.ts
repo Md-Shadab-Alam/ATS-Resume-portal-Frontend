@@ -5,17 +5,16 @@ import { Login } from 'src/app/models/login';
 import { AuthService } from 'src/app/services/auth-service.service';
 
 @Component({
-  selector: 'app-login-page',
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.css']
+  selector: 'app-employee-login-modal',
+  templateUrl: './employee-login-modal.component.html',
+  styleUrls: ['./employee-login-modal.component.css']
 })
-export class LoginPageComponent {
+export class EmployeeLoginModalComponent {
 
   loginDetails:Login={
     Email:"",
     Password:""
    }
-   
    constructor(private route:ActivatedRoute,private loginAuth:AuthService,private router:Router){}
  
   ngOnInit(): void {}
@@ -60,3 +59,4 @@ export class LoginPageComponent {
     })
   }
 }
+

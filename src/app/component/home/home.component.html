@@ -1,3 +1,4 @@
+<app-nav-bar></app-nav-bar>
 <div class="row">
     <div class="col-md-6 d-flex aria-label-center justify-content-center">
         <div class="internal-box text-center mx-5">
@@ -6,7 +7,9 @@
                 Build your team by getting suitable employess for your team
             </div>
             <div>
-                <button class="btn btn-outline-secondary btn-lg m-3" routerLink="login">Login</button>
+                <!-- adding Modal -->
+                <button class="btn btn-outline-secondary btn-lg m-3" data-bs-toggle="modal" data-bs-target="#recruterslogin">Login</button>
+                <app-recruter-login-modal></app-recruter-login-modal>
             </div>
             <div>
                 <span>Don't have account? </span>
@@ -22,7 +25,10 @@
                 Upload your resume and get a chance to be the part of a project team
             </div>
             <div>
-                <button class="btn btn-outline-secondary btn-lg m-3" routerLink="login">Login</button>
+                <button class="btn btn-outline-secondary btn-lg m-3" data-bs-toggle="modal" data-bs-target="#employeelogin">Login</button>
+                <app-employee-login-modal></app-employee-login-modal>   
+                    
+
             </div>
 
             <div>
