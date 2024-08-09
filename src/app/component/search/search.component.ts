@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ResumeDataService } from 'src/app/services/resume-data.service';
 
 @Component({
@@ -6,12 +7,13 @@ import { ResumeDataService } from 'src/app/services/resume-data.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent {
+export class SearchComponent  implements OnInit{
   query: string='';
   @Output() search = new EventEmitter<string>();
  
  
-  constructor(private resumeService: ResumeDataService) { }
+  constructor(private resumeService: ResumeDataService, http: HttpClient) { }
+  
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }

@@ -9,7 +9,7 @@ import { ResumeDataService } from 'src/app/services/resume-data.service';
 })
 export class DashboardComponent {
 
-
+data:any;
 
 
 resumes?: any[];
@@ -39,16 +39,30 @@ resumes?: any[];
   }
  
   onSearch(query: string):void{
-    this.resumeService.searchResumes(query).subscribe(
-      data => {
-        this.resumes1 = data;
-        this.flag = false;
-        console.log('Search results:', data);
+   
+    this.resumeService.findKeyword(query).subscribe(
+      res => {
+         this.data = res.candidates[0].content.parts[0].text
+        // this.resumes1 = this.data;
+        // this.flag = false;
+        console.log(res);
+        console.log('Search results:', this.data);
+        this.resumeService.searchResumes(this.data).subscribe(
+          resp=>{
+            this.resumes1 = resp;
+            this.flag = false;
+            console.log('Search results:', resp);
+          },
+          error =>{
+            console.error('Error search resume:', error);
+          }
+
+        )
       },
       error => {
         console.error('Error search resumes:', error);
       }
-    );
+    )
   }
  
  

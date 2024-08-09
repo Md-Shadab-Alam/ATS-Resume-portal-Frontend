@@ -12,14 +12,62 @@ export class ResumeDataService {
 
   constructor(private http: HttpClient) { } 
  
-  // BaseApiUrl: string = 'https://localhost:7101/api'
-  BaseApiUrl: string = 'https://resumeportal.azurewebsites.net/api/'
+   BaseApiUrl: string = 'https://localhost:7101/api'
+  //BaseApiUrl: string = 'https://resumeportal.azurewebsites.net/api/'
+   AiAPIUrl : string ='https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=';
+ 
 
   getAllResumes(): Observable<any[]> {
     return this.http.get<any[]>(`${this.BaseApiUrl}/Resumes`);
   }
  
-  searchResumes(query: string): Observable<any[]>{
+  // searchResumes(query: string): Observable<any[]>{
+  //   const headers = new HttpHeaders({
+  //     'Content-Type': 'application/json'
+  //   });
+  //   const body= {
+  //     contents:[
+  //       {
+  //         parts:[
+  //           {text: query}
+  //         ]
+  //       }
+  //     ]
+  //   }
+  //   console.log("query");
+
+  //   return this.http.post<any>(this.AiAPIUrl,body,{headers}).pipe(
+  //     switchMap((response)=>{
+  //       const keyword = response.keyword || query;
+
+  //       console.log(response)
+  //       let params = new HttpParams().set('query', keyword);
+
+  //       return this.http.get<any[]>(`${this.BaseApiUrl}/Resumes/search`, {params});
+  //     }),
+  //   )
+  // }
+
+  findKeyword(query:string):Observable<any>{
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    const body = {
+      contents: [
+        {
+          parts: [
+            { text: " just give me the keyword not whole sentence, dont write keyword" +  query }
+          ]
+        }
+      ]
+    };
+
+  return this.http.post<any>(this.AiAPIUrl,body,{headers});
+
+  }
+
+  searchResumes(query:string): Observable<any[]>{
     let params = new HttpParams().set('query', query);
     return this.http.get<any[]>(`${this.BaseApiUrl}/Resumes/search`, {params: params});
   }
