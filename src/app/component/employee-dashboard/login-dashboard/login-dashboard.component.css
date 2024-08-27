@@ -1,0 +1,13 @@
+.empDashboard{
+    height: 70vh;
+}
+.empty{
+    height: 20vh;
+}
+.box{
+    margin-left: 25%;
+    margin-top: 5%;
+    width: 50%;
+    text-align: center;
+    border: solid black 2px;
+}

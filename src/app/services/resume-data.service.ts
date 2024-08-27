@@ -14,7 +14,7 @@ export class ResumeDataService {
  
    BaseApiUrl: string = 'https://localhost:7101/api'
   //BaseApiUrl: string = 'https://resumeportal.azurewebsites.net/api/'
-   AiAPIUrl : string ='https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=';
+   AiAPIUrl : string ='https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyAJmaUeYQ5YucYaKxZt13izqFty2vZvI_E';
  
 
   getAllResumes(): Observable<any[]> {
@@ -57,7 +57,8 @@ export class ResumeDataService {
       contents: [
         {
           parts: [
-            { text: " just give me the keyword not whole sentence, dont write keyword" +  query }
+             { text: " just give me the keyword not whole sentence, dont write keyword" +  query }
+            //{text: "find the keywords which may be related to IT sector, location, technology, skills, and experience from this" + query + "do not generater any new keywords by yourself"}
           ]
         }
       ]

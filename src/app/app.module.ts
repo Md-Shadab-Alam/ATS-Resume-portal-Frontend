@@ -12,6 +12,7 @@ import { HomeComponent } from './component/home/home.component';
 import { LoginPageComponent } from './component/recruter-login-modal/recruter-login-modal.component';
 import { EmployeeLoginModalComponent } from './component/employee-login-modal/employee-login-modal.component';
 import { EmployeeRegisterModalComponent } from './component/employee-register-modal/employee-register-modal.component';
+import { LoginDashboardComponent } from './component/employee-dashboard/login-dashboard/login-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { EmployeeRegisterModalComponent } from './component/employee-register-mo
     LoginPageComponent,
     HomeComponent,
     EmployeeLoginModalComponent,
-    EmployeeRegisterModalComponent
+    EmployeeRegisterModalComponent,
+    LoginDashboardComponent
   ],
   imports: [
     BrowserModule,

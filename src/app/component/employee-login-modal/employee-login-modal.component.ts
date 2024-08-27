@@ -54,7 +54,7 @@ export class EmployeeLoginModalComponent {
         console.log(res);
         this.isUserValid=true;
         this.loginAuth.setToken(res.token);
-        this.router.navigateByUrl('dashboard');
+        this.router.navigateByUrl('emp-dashboard');
       }
     })
   }

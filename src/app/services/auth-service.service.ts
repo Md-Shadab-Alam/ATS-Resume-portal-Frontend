@@ -44,12 +44,12 @@ export class AuthService {
   // }
  
   registerUser(user:Register){
-    return this.http.post(this.baseApiUrl+"/api/Account/register",user);
+    return this.http.post(this.baseApiUrl+"/api/Employee/register",user);
   }
  
   loginUser(loginInfo:Login)
   {
-    return this.http.post(this.baseApiUrl+"/api/Account/login",loginInfo);
+    return this.http.post(this.baseApiUrl+"/api/Employee/login",loginInfo);
   }
   setToken(token:string){
     localStorage.setItem("access_token",token);
